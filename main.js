@@ -46,30 +46,53 @@
 //QUERYSELECTOR
   
 
-  // 1. Using idname
-var item=document.querySelector('#main-header')
-item.style.borderBottom='solid 10px orange'
+//   // 1. Using idname
+// var item=document.querySelector('#main-header')
+// item.style.borderBottom='solid 10px orange'
 
-  // 2. using tagname 
-var input=document.querySelector('input')
-input.value="Item 5";
+//   // 2. using tagname 
+// var input=document.querySelector('input')
+// input.value="Item 5";
 
-  // 3. for next elemnt with same tagname
-var submit=document.querySelector('input[type="submit"]')
-submit.value="SEND";
+//   // 3. for next elemnt with same tagname
+// var submit=document.querySelector('input[type="submit"]')
+// submit.value="SEND";
 
-  // 4.Using Classname for last child
- var lastelem=document.querySelector('.list-group-item:last-child') 
- lastelem.textContent=" Item 4";
+//   // 4.Using Classname for last child
+//  var lastelem=document.querySelector('.list-group-item:last-child') 
+//  lastelem.textContent=" Item 4";
 
-  // 5.Using Classname for nth child
-  var lastelem=document.querySelector('.list-group-item:nth-child(3)') 
-  lastelem.textContent=" Item 3";
+//   // 5.Using Classname for nth child
+//   var lastelem=document.querySelector('.list-group-item:nth-child(3)') 
+//   lastelem.textContent=" Item 3";
 
-    // 6.Using Classname for nth child
-    var lastelem=document.querySelector('.list-group-item:nth-child(2)') 
-    lastelem.style.backgroundColor=" lightgreen";
+//     // 6.Using Classname for nth child
+//     var lastelem=document.querySelector('.list-group-item:nth-child(2)') 
+//     lastelem.style.backgroundColor=" lightgreen";
   
-    // 7.Using Classname for nth child
-  var lastelem=document.querySelector('.list-group-item:nth-child(3)') 
-  lastelem.style.display=" none";  
+//     // 7.Using Classname for nth child
+//   var lastelem=document.querySelector('.list-group-item:nth-child(3)') 
+//   lastelem.style.display=" none";  
+
+  //QUERYSELECTORALL
+
+  var titles=document.querySelectorAll('.title');
+
+  titles[0].textContent="Load Items";
+
+     var secondItem=document.querySelectorAll('li:nth-child(2)');
+    
+     for(i=0;i<secondItem.length;i++)
+  {
+    secondItem[i].style.fontWeight="bold";
+    secondItem[i].style.color="green";
+
+  }
+
+  var odd=document.querySelectorAll('li:nth-child(odd)');
+
+  for(i=0;i<odd.length;i++)
+  {
+    odd[i].style.backgroundColor="lightgreen";
+
+  }
