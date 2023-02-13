@@ -76,23 +76,104 @@
 
   //QUERYSELECTORALL
 
-  var titles=document.querySelectorAll('.title');
+//   var titles=document.querySelectorAll('.title');
 
-  titles[0].textContent="Load Items";
+//   titles[0].textContent="Load Items";
 
-     var secondItem=document.querySelectorAll('li:nth-child(2)');
+//      var secondItem=document.querySelectorAll('li:nth-child(2)');
     
-     for(i=0;i<secondItem.length;i++)
-  {
-    secondItem[i].style.fontWeight="bold";
-    secondItem[i].style.color="green";
+//      for(i=0;i<secondItem.length;i++)
+//   {
+//     secondItem[i].style.fontWeight="bold";
+//     secondItem[i].style.color="green";
 
-  }
+//   }
 
-  var odd=document.querySelectorAll('li:nth-child(odd)');
+//   var odd=document.querySelectorAll('li:nth-child(odd)');
 
-  for(i=0;i<odd.length;i++)
-  {
-    odd[i].style.backgroundColor="lightgreen";
+//   for(i=0;i<odd.length;i++)
+//   {
+//     odd[i].style.backgroundColor="lightgreen";
 
-  }
+//   }
+
+// var itemlist=document.querySelector('#items');
+
+//firstChild
+//console.log(itemlist.firstChild);
+
+//FirstElement Child
+//console.log(itemlist.firstElementChild);
+
+//lastChild
+//console.log(itemlist.lastChild);
+
+//LastElement Child
+//console.log(itemlist.lastElementChild);
+
+//nextSibling
+//console.log(itemlist.nextSibling);
+
+//nextElementSibling
+//console.log(itemlist.nextElementSibling);
+
+//previousSibling
+//console.log(itemlist.previousSibling);
+
+//previousElementSibling
+//console.log(itemlist.previousElementSibling);
+
+//Create Element
+var newDiv=document.createElement('div');
+
+//add a classname to the element
+newDiv.className='hello';
+
+//to add id
+newDiv.id='hello 1';
+
+//add attribute
+newDiv.setAttribute('title','Hello Div');
+
+//create text node
+var newDivText=document.createTextNode('Hello World');
+
+//add text to Div
+newDiv.appendChild(newDivText);
+
+
+
+//to insert new element from script to html
+
+           //to insert newDiv before item lister
+var container=document.querySelector('header .container');
+
+var h1= document.querySelector('header h1');
+
+container.insertBefore(newDiv,h1);
+
+
+
+           //to insert newli hello world before last item 
+
+//Create Element
+var newli=document.createElement('li');
+
+//add a classname to the element
+newli.className='list-group-item';
+
+//create text node
+var newliText=document.createTextNode('Hello World');
+
+//add text to Div
+newli.appendChild(newliText);
+
+var item=document.querySelector('.list-group');
+
+var li=item.children[0];
+
+item.insertBefore(newli,li);
+
+
+
+
