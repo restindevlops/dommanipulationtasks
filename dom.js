@@ -22,6 +22,12 @@ function addItem(e)
 
     //-------------------------------------------------
 
+    //Get input description
+    var newDesc=" "+document.getElementById('itemdesc').value;
+
+    //add textnode of description to li
+    li.appendChild(document.createTextNode(newDesc));
+
     //create delbutton element
     var delButton=document.createElement('button');
 
@@ -69,3 +75,50 @@ function removeItem(e){
         }
     }
 }
+
+var filter=document.getElementById('filter');
+
+// Filter Event
+filter.addEventListener('keyup',filterItems);
+
+function filterItems(e){
+
+    //convert text to lowercase
+    var text=e.target.value.toLowerCase();
+
+    //get lis
+    var items=document.getElementsByTagName('li');
+
+    //convert to array
+    Array.from(items).forEach(function (item){
+        var itemName= item.firstChild.textContent;
+        if(itemName.toLowerCase().indexOf(text)!=-1){
+        
+            item.style.display='block';
+        }
+        
+        else{
+                item.style.display='none';
+            }
+    })
+
+}
+
+ //create description box 
+ var descBox=document.createElement('input');
+
+ //adding class to descBox
+ descBox.className='form-control mr-2';
+
+ //add id
+ descBox.id='itemdesc';
+
+ //get parentelement of descbox
+ var form1=document.querySelector('#addForm');
+
+ //get sibling element of descBox
+ var submit=document.querySelector('#submit');
+
+ //insert descBox before sibling elemnt in the parentnode
+ form1.insertBefore(descBox,submit);
+
