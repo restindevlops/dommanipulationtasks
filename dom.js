@@ -76,34 +76,6 @@ function removeItem(e){
     }
 }
 
-var filter=document.getElementById('filter');
-
-// Filter Event
-filter.addEventListener('keyup',filterItems);
-
-function filterItems(e){
-
-    //convert text to lowercase
-    var text=e.target.value.toLowerCase();
-
-    //get lis
-    var items=document.getElementsByTagName('li');
-
-    //convert to array
-    Array.from(items).forEach(function (item){
-        var itemName= item.firstChild.textContent;
-        if(itemName.toLowerCase().indexOf(text)!=-1){
-        
-            item.style.display='block';
-        }
-        
-        else{
-                item.style.display='none';
-            }
-    })
-
-}
-
  //create description box 
  var descBox=document.createElement('input');
 
@@ -119,6 +91,39 @@ function filterItems(e){
  //get sibling element of descBox
  var submit=document.querySelector('#submit');
 
- //insert descBox before sibling elemnt in the parentnode
+ //insert descBox just before sibling element in the parentnode
  form1.insertBefore(descBox,submit);
+
+
+
+var filter=document.getElementById('filter');
+
+// Filter Event
+filter.addEventListener('keyup',filterItems);
+
+function filterItems(e){
+
+    //convert text to lowercase
+    var text=e.target.value.toLowerCase();
+
+    //get lis
+    var items=document.getElementsByTagName('li');
+
+    //convert to array
+    Array.from(items).forEach(function (item){
+       var itemName=item.childNodes[0].textContent + item.childNodes[1].textContent;
+       console.log(itemName);
+        if(itemName.toLowerCase().indexOf(text)!=-1){
+        
+            item.style.display='block';
+        }
+        
+        else{
+                item.style.display='none';
+            }
+    })
+
+}
+
+
 
